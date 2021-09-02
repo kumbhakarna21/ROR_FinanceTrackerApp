@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+<!-- client = IEX::Api::Client.new(
+  publishable_token: 'Tpk_5467529083894c0daa983dc10fc1885a',
+  endpoint: 'https://sandbox.iexapis.com/v1'
+)
+ -->

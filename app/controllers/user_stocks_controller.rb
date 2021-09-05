@@ -11,4 +11,13 @@ class UserStocksController < ApplicationController
 		flash[:notice] = "Stock #{stock.name} was successfully added to your portfolio "
 		redirect_to my_portfolio_path
 	end
+
+	def destroy
+		# you can remove this line also but you want that stock details keep this line
+		stock = Stock.find(params[:id])
+		user_stock = UserStock.where(user_id: current_user, stock_id: stock.id).first
+		user_stock.destroy
+		flash[:notice] = "#{stock.name} was successfully removed from portfolio"
+		redirect_to my_portfolio_path
+	end
 end
